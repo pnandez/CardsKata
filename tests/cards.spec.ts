@@ -1,4 +1,6 @@
 import cards from "../src/cards";
+import Game from "../src/game";
+
 
 describe("Cards should", () =>{
   
