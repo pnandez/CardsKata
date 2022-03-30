@@ -20,7 +20,6 @@ class Cards{
     if(valuesForLetters.hasOwnProperty(card2)){
       card2 = valuesForLetters[card2];
     }
-    console.log(card1 + card2)
     if(isNaN(Number(card1)) || isNaN(Number(card2))){
       throw new TypeError("One of the cards is not correct");
     }
