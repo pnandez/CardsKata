@@ -13,6 +13,7 @@ class Game{
   }
 
   play():string {
+    
     for (let i =0; i < 2 ; i++){
       let result:string = cards.compare(this.cardsP1[i], this.cardsP2[i]);
       if(result === this.cardsP1[i])

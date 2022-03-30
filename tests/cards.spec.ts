@@ -69,4 +69,13 @@ describe("Game should", () =>{
     expect(game.play()).toBe("Draw")
 
   } )
+
+  test("raise error when any of the decks is not complete", () =>{
+    const cardsP1:string[] = ["1","3"];
+    const cardsP2:string[] = ["J"];
+
+    let game = new Game(cardsP1,cardsP2);
+    
+    expect(() => {game.play()}).toThrow("One of the decks is uncomplete");
+  })
 })
