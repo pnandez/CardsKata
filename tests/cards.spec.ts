@@ -15,6 +15,7 @@ describe("Cards should", () =>{
     expect(() =>{ cards.compare("AA","1");}).toThrow("length of cards greater than 1")
   })
 
-  //Only accept comparison for one character strings
-
+  test("check cards given are 1-10 or J,Q,K", ()=>{
+    expect(() => {cards.compare("A", "2")}).toThrow(TypeError)
+  })
 })
