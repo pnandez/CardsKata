@@ -11,6 +11,8 @@ class Cards{
 
 
   compare(card1:string, card2:string): string{
+    if(card1.length > 1 || card2.length > 1)
+      throw new Error;
     let originalCard1:string = card1;
     let originalCard2:string = card2;
     if(valuesForLetters.hasOwnProperty(card1)){
@@ -18,7 +20,8 @@ class Cards{
     }
     if(valuesForLetters.hasOwnProperty(card1)){
       card1 = valuesForLetters[card1];
-    }    if(Number(card1) > Number(card2)){
+    }
+    if(Number(card1) > Number(card2)){
       return originalCard1;
     } else return originalCard2;  
   
