@@ -9,6 +9,10 @@ class Game{
     this.cardsP1 = cards1;
     this.cardsP2 = cards2;
   }
+
+  play():string {
+    return "";
+  }
 }
 
 export default Game;

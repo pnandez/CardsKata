@@ -18,7 +18,14 @@ describe("Cards should", () =>{
 
   test("check cards given are 1-10 or J,Q,K", ()=>{
     expect(() => {cards.compare("A", "2")}).toThrow(TypeError)
-    expect(() => {cards.compare("A", "A")}).toThrow(TypeError)  })
+    expect(() => {cards.compare("A", "A")}).toThrow(TypeError)  
+  })
+
+  test("return draw when no card wins", () =>{
+    expect(cards.compare("3", "3")).toBe("draw");
+  })
+
+
 })
 
 describe("Game should", () =>{
@@ -44,5 +51,13 @@ describe("Game should", () =>{
     expect(game.cardsP2.length).toBe(2);
   })
 
+  test("get winner", () => {
 
+    const cardsP1:string[] = ["1","3"];
+    const cardsP2:string[] = ["J","3"];
+
+    let game = new Game(cardsP1,cardsP2);
+    
+
+  } )
 })

@@ -1,5 +1,6 @@
 import { isNumberLiteral } from "@babel/types";
 import { cachedDataVersionTag } from "v8";
+import { deflateRaw } from "zlib";
 
 
 const valuesForLetters: {[key:string]:string} = {
@@ -25,8 +26,12 @@ class Cards{
     }
     if(Number(card1) > Number(card2)){
       return originalCard1;
-    } else return originalCard2;  
-  
+    }
+    if(Number(card1) === Number(card2))
+      return "draw";
+    if(Number(card1) < Number(card2))
+      return originalCard2;  
+    return "";
   }
 
 }
