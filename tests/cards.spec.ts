@@ -11,8 +11,8 @@ describe("Cards should", () =>{
     expect(cards.compare("3","Q")).toBe("Q")
   })
 
-  test("check if inputs have just onw character", () =>{
-    expect(cards.compare("AA","1")).toThrow(Error)
+  test("check if inputs have just one character", () =>{
+    expect(() =>{ cards.compare("AA","1");}).toThrow("length of cards greater than 1")
   })
 
   //Only accept comparison for one character strings

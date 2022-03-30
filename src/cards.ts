@@ -11,8 +11,9 @@ class Cards{
 
 
   compare(card1:string, card2:string): string{
-    if(card1.length > 1 || card2.length > 1)
-      throw new Error;
+    if(card1.length > 1 || card2.length > 1){
+      throw new TypeError("length of cards greater than 1");
+    }
     let originalCard1:string = card1;
     let originalCard2:string = card2;
     if(valuesForLetters.hasOwnProperty(card1)){
