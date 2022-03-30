@@ -58,6 +58,7 @@ describe("Game should", () =>{
 
     let game = new Game(cardsP1,cardsP2);
     
+    expect(game.play()).toBe("Player 1")
 
   } )
 })
