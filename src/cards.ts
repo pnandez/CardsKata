@@ -4,6 +4,8 @@ import { cachedDataVersionTag } from "v8";
 class Cards{
 
   compare(card1:string, card2:string): string{
+    let originalCard1:string = card1;
+    let originalCard2:string = card2;
     if(card1.match("J")){
       card1 = "11";
     }
@@ -23,8 +25,8 @@ class Cards{
       card2 = "13";
     }
     if(Number(card1) > Number(card2)){
-      return card1;
-    } else return card2;  
+      return originalCard1;
+    } else return originalCard2;  
   
   }
 
