@@ -23,10 +23,26 @@ describe("Cards should", () =>{
 
 describe("Game should", () =>{
   
-  test("give two cards to each player", () =>{
-    let game = new Game();
+  test("give each player two cards", () =>{
+
+    const cards:string[] = ["1","2","3","4","5","6","7","8","9","10","J","Q","K"];
+
+    let cardsP1:string[] = []
+    let cardsP2:string[] = []
+
+    let cardsAmount = 0;
+    while(cardsAmount < 4){
+      cardsP1.push(cards[Math.random()*cards.length]);
+      cardsP2.push(cards[Math.random()*cards.length]);
+      cardsAmount = cardsP1.length + cardsP2.length;
+    }
+
+  
+    let game = new Game(cardsP1,cardsP2);
 
     expect(game.cardsP1.length).toBe(2);
     expect(game.cardsP2.length).toBe(2);
   })
+
+
 })
