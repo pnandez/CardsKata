@@ -1,6 +1,7 @@
 class Cards{
-  play(card:number): number{
-    return card;
+
+  compare(card1:string, card2:string): string{
+    return "";
   }
 }
 

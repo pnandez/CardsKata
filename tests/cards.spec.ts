@@ -1,7 +1,10 @@
 import cards from "../src/cards";
 
 describe("Cards should", () =>{
-  test("return value for cards given", () =>{
-    expect(cards.play(6)).toBe(6);
+  
+  test("compare two numbered cards and return greatest", () =>{
+    expect(cards.compare("2","3")).toBe("3");
+
   })
+
 })
