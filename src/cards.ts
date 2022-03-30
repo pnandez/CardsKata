@@ -1,6 +1,6 @@
 class Cards{
   play(card:number): number{
-    return 0;
+    return card;
   }
 }
 
