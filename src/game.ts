@@ -13,7 +13,8 @@ class Game{
   }
 
   play():string {
-    if(this.cardsP1.length!=2 || this.cardsP2.length != 2)
+    let checkDecksLength = this.cardsP1.length!=2 || this.cardsP2.length != 2;
+    if(checkDecksLength)
       throw new Error("One of the decks is uncomplete")
     for (let i =0; i < 2 ; i++){
       let result:string = cards.compare(this.cardsP1[i], this.cardsP2[i]);
