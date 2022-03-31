@@ -5,6 +5,9 @@ class Card{
   private readonly value:number = 0;
 
   constructor(cardName:string){
+    if(!cardValuesDictionary.hasOwnProperty(cardName)){
+      throw new Error("You must provide a valid card name between 1-10 or J,Q,K")
+    }
     this.name =  cardName;
     this.value = cardValuesDictionary[cardName];
   }
