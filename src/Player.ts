@@ -2,12 +2,14 @@ import Card from "./cards";
 
 class Player{
 
-  constructor(cardName1:string, cardName2:string){
+  private readonly cartas:Card[] = [];
 
+  constructor(cardName1:string, cardName2:string){
+    this.cartas.push(new Card(cardName1), new Card(cardName2));
   }
 
   getCards():Card[]{
-    return [];
+    return this.cartas;
   }
 }
 
