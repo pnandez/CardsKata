@@ -63,13 +63,11 @@ describe("Game should", () =>{
     expect(players1[1].getCards()).not.toEqual(players2[1].getCards());
   });
 
-  it("play 2 rounds and give a result for each round", () =>{
-    const game = new Game();
-    const players = game.getPlayers();
-    
-    expect(()=>{
-      game.play();
-      return game.getRoundsResults().length;
-    }).toBe(2)
+  it("play and give a result", () =>{
+    let game = new Game();
+    expect(game.play()).toMatch(/Result.*/);
+    game = new Game();
+    expect(game.play()).toMatch(/Result.*/)
+
   });
 })
