@@ -16,7 +16,7 @@ class Player{
   }
 
   getFirstCard():Card{
-    return new Card("");
+    return this.cartas[0];
   }
 
   
