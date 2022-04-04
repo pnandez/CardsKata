@@ -32,4 +32,9 @@ describe("Player should", () =>{
     let player:Player = new Player("1","2");
     expect(player.getFirstCard().getValue()).toBe(1);
   })
+
+  test("give second card when required", () =>{
+    let player: Player = new Player("1", "2");
+    expect(player.getSecondCard().getValue()).toBe(2)
+  });
 })

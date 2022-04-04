@@ -19,6 +19,10 @@ class Player{
     return this.cartas[0];
   }
 
+  getSecondCard(){
+    
+  }
+
   
 }
 
