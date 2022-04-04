@@ -1,4 +1,5 @@
 import Card from "../src/cards";
+import Game from "../src/Game";
 import Player from "../src/Player";
 
 describe("Card should", () =>{
@@ -37,4 +38,11 @@ describe("Player should", () =>{
     let player: Player = new Player("1", "2");
     expect(player.getSecondCard().getValue()).toBe(2)
   });
+})
+
+describe("Game should", () =>{
+  it("create two players with two random cards each", () =>{
+    let game = new Game();
+    expect(game.getPlayers().length).toBe(2);
+  })
 })
