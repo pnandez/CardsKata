@@ -19,8 +19,8 @@ class Player{
     return this.cartas[0];
   }
 
-  getSecondCard(){
-    
+  getSecondCard(): Card {
+    return this.cartas[1];
   }
 
   
