@@ -41,8 +41,15 @@ describe("Player should", () =>{
 })
 
 describe("Game should", () =>{
-  it("create two players with two random cards each", () =>{
+  it("create two players", () =>{
     let game = new Game();
     expect(game.getPlayers().length).toBe(2);
+  })
+
+  it("create two players with two cards each", () =>{
+    const game = new Game();
+    const players = game.getPlayers();
+    expect(players[0].getCards().length).toBe(2);
+    expect(players[1].getCards().length).toBe(2);
   })
 })
