@@ -26,6 +26,10 @@ describe("Player should", () =>{
     expect(()=> {
       let player:Player = new Player("11","2");
     }).toThrow("Length of card not accepted")
-    
+  })
+
+  test("give first card when required", () =>{
+    let player:Player = new Player("1","2");
+    expect(player.getFirstCard().getValue()).toBe(1);
   })
 })
