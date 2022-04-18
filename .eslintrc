@@ -4,7 +4,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "@typescript-eslint/rule-name": "error"
+    "@typescript-eslint/rule-name": "off"
   },
   "extends": [
     "eslint:recommended",
