@@ -1,71 +1,45 @@
 import Card from "../src/cards";
 
-describe("Card should", () =>{
-  test("have its own value", () =>{
+describe("The kata Card should", () =>{
+  test("win player with higher card", () =>{
     const carta1 = new Card();
 
     expect(carta1.play(['1'], ['2'])).toBe("Player 2 wins!");
+    expect(carta1.play(['3'], ['2'])).toBe("Player 1 wins!");
 
   })
 
-//   test("throw exception when value is not in range", () => {
-//     expect(() => {
-//       const carta1:Card = new Card("0");
-//     }).toThrow("You must provide a valid card name between 1-9 or J,Q,K")
-//   })
-// })
+  test("throw exception when value is not in range", () => {
+    expect(() => {
+      const carta1:Card = new Card();
+      carta1.play(['0'],['1']);
+    }).toThrow("You must provide a valid card name between 1-9 or J,Q,K");
 
-// describe("Player should", () =>{
-//   test("be given two cards", () => {
-//     const player1:Player = new Player("1","3");
-//     expect(player1.getCards().length).toBe(2);
-//   })
+    expect(() => {
+      const carta1: Card = new Card();
+      carta1.play([], ['1']);
+    }).toThrow("You must provide a valid card name between 1-9 or J,Q,K");
+  })
 
-//   test("throw error when card names given are more than 1 character", ()=>{
-//     expect(()=> {
-//       const player:Player = new Player("11","2");
-//     }).toThrow("Length of card not accepted")
-//   })
+  test("play with players that have two cards", () => {
+    const carta1 = new Card();
+    expect(carta1.play(['1','2'], ['2','3'])).toBe("Player 2 wins!");
+    expect(carta1.play(['5', '4'], ['2', '3'])).toBe("Player 1 wins!");
+    expect(carta1.play(['1', '2'], ['2', '1'])).toBe("It's a draw!");
+  })
 
-//   test("give first card when required", () =>{
-//     const player:Player = new Player("1","2");
-//     expect(player.getFirstCard().getValue()).toBe(1);
-//   })
+  test("play with players that have both same number of cards", () => {
+    expect(() => {
+      const carta1: Card = new Card();
+      carta1.play(['2','3'], ['1']);
+    }).toThrow("Both Players should have same number of cards");
+  })
 
-//   test("give second card when required", () =>{
-//     const player: Player = new Player("1", "2");
-//     expect(player.getSecondCard().getValue()).toBe(2)
-//   });
-// })
+  test('play with players that have many cards', () => {
+    const carta1 = new Card();
+    expect(carta1.play(['1', '2', 'K'], ['2', '3', '9'])).toBe("Player 2 wins!");
+    expect(carta1.play(['5', '4', '5', '4'], ['2', '3', '5', '4'])).toBe("Player 1 wins!");
+    expect(carta1.play(['1', '2', 'J', 'Q', 'J'], ['2', '1', 'J', 'Q', 'J'])).toBe("It's a draw!");
+  })
 
-// describe("Game should", () =>{
-//   it("create two players", () =>{
-//     const game = new Game();
-//     expect(game.getPlayers().length).toBe(2);
-//   })
-
-//   it("create two players with two cards each", () =>{
-//     const game = new Game();
-//     const players = game.getPlayers();
-//     expect(players[0].getCards().length).toBe(2);
-//     expect(players[1].getCards().length).toBe(2);
-//   });
-
-//   it("should assign randomly cards to players", () =>{
-//     const game1 = new Game();
-//     const players1 = game1.getPlayers();
-//     const game2 = new Game();
-//     const players2 = game2.getPlayers();
-
-//     expect(players1[0].getCards()).not.toEqual(players2[0].getCards());
-//     expect(players1[1].getCards()).not.toEqual(players2[1].getCards());
-//   });
-
-//   it("play and give a result", () =>{
-//     let game = new Game();
-//     expect(game.play()).toMatch(/Result.*/);
-//     game = new Game();
-//     expect(game.play()).toMatch(/Result.*/)
-
-//   });
 })
